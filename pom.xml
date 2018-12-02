@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stu</groupId>
-    <artifactId>stu-parent</artifactId>
+    <artifactId>stu.parent</artifactId>
     <version>${stu.version}</version>
     <packaging>pom</packaging>
 
@@ -33,12 +33,12 @@
         <dependencies>
             <dependency>
                 <groupId>com.stu</groupId>
-                <artifactId>stu-dao</artifactId>
+                <artifactId>stu.dao</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.stu</groupId>
-                <artifactId>stu-service</artifactId>
+                <artifactId>stu.service</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

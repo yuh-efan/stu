@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.stu</groupId>
-        <artifactId>stu-parent</artifactId>
+        <artifactId>stu.parent</artifactId>
         <version>${stu.version}</version>
         <relativePath>../pom.xml</relativePath><!-- 默认从存储库查找父级 找不到再到仓库找 可以在子模块中配置  ../par-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stu-web</artifactId>
+    <artifactId>stu.web</artifactId>
 
     <dependencies>
         <dependency>
@@ -26,11 +26,11 @@
 
         <dependency>
             <groupId>com.stu</groupId>
-            <artifactId>stu-dao</artifactId>
+            <artifactId>stu.dao</artifactId>
         </dependency>
         <dependency>
             <groupId>com.stu</groupId>
-            <artifactId>stu-service</artifactId>
+            <artifactId>stu.service</artifactId>
         </dependency>
     </dependencies>
 
