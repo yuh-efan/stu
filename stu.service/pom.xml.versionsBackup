@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.stu</groupId>
+        <artifactId>stu-parent</artifactId>
+        <version>0.0.54</version>
+        <relativePath>../pom.xml</relativePath><!-- 默认从存储库查找父级 可以在子模块中配置  ../par-->
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>stu-service</artifactId>
+
+
+</project>

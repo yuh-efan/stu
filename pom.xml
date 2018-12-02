@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stu</groupId>
+    <artifactId>stu-parent</artifactId>
+    <version>${stu.version}</version>
+    <packaging>pom</packaging>
+
+    <name>stu project</name>
+    <description>描述</description>
+
+    <!--配置parent-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath/> <!-- 默认从存储库查找父级 找不到再到仓库找 可以在子模块中配置  ../par-->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <stu.version>1.1.0-SNAPSHOT</stu.version> <!--自定义-->
+    </properties>
+
+    <!--管理子工程版本 不是继承用的 只是管理版本-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.stu</groupId>
+                <artifactId>stu-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stu</groupId>
+                <artifactId>stu-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>stu.dao</module>
+        <module>stu.service</module>
+        <module>stu.web</module>
+    </modules>
+
+
+    <!--配置远程仓库-->
+    <repositories>
+
+        <!--maven默认中央仓库:所有的pom都继承了-->
+        <!--<repository>-->
+        <!--<id>central</id>-->
+        <!--<name>Central Repository</name>-->
+        <!--<url>https://repo.maven.apache.org/maven2</url>-->
+        <!--<layout>default</layout>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+        <!--</snapshots>-->
+        <!--</repository>-->
+
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout><!--用于定位和排序构件的仓库布局类型-可以是default（默认）或者legacy（遗留）。Maven2为其仓库提供了一个默认的布局；Maven1.x有一种遗留布局。我们可以使用该元素指定布局是default还是legacy-->
+            <releases><!--如何处理远程仓库里发布版本的下载-->
+                <enabled>true</enabled>
+            </releases>
+            <snapshots><!--如何处理远程仓库里快照版本的下载。有了releases和snapshots这两组配置，POM就可以在每个单独的仓库中，为每种类型的构件采取不同的策略。例如，可能有人会决定只为开发目的开启对快照版本下载的支持。-->
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!--配置插件远程仓库-->
+    <pluginRepositories>
+        <!--maven默认中央仓库:所有的pom都继承了-->
+        <pluginRepository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout><!--用于定位和排序构件的仓库布局类型-可以是default（默认）或者legacy（遗留）。Maven2为其仓库提供了一个默认的布局；Maven1.x有一种遗留布局。我们可以使用该元素指定布局是default还是legacy-->
+            <releases><!--如何处理远程仓库里发布版本的下载-->
+                <enabled>true</enabled>
+            </releases>
+            <snapshots><!--如何处理远程仓库里快照版本的下载。有了releases和snapshots这两组配置，POM就可以在每个单独的仓库中，为每种类型的构件采取不同的策略。例如，可能有人会决定只为开发目的开启对快照版本下载的支持。-->
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>junit</groupId>-->
+            <!--<artifactId>junit</artifactId>-->
+            <!--<version>4.12</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
+
+
+    <!--依赖:-->
+    <!--<dependencies>-->
+        <!--<dependency>-->
+
+            <!--<groupId></groupId>-->
+            <!--<artifactId></artifactId>-->
+            <!--<version>4</version>-->
+
+            <!--可选依赖:  如果为true 那么不会向下依赖,默认为false不可选-->
+            <!--<optional>true</optional>-->
+
+
+            <!--排除依赖:设置当前依赖中时候使用间接依赖-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>t1</groupId>-->
+                    <!--<artifactId>t1</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+
+
+            <!--scope: provided  compile  test  runtime  system-->
+            <!--system 和provided相同,不过被依赖项不会从maven仓库下载，而是从本地文件系统拿需要添加systemPath的属性来定义路径-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${basedir}/WebContent/WEB-INF/lib/sqljdbc4.jar</systemPath>-->
+
+        <!--</dependency>-->
+    <!--</dependencies>-->
+
+</project>
