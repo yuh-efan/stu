@@ -12,7 +12,6 @@
 
     <artifactId>stu-web</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
